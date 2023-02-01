@@ -18,7 +18,7 @@ class UserForm extends Component {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    Authorization: `Bearer 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`,
+                    Authorization: `Bearer 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`,
                 },
                 body: JSON.stringify({
                     prompt: "Create a list of 5 " + this.state.genre + " " + this.state.category + " available on netflix !",
@@ -29,8 +29,7 @@ class UserForm extends Component {
         .then((response) => response.json())
         .then(data => 
             onUpdate(data.choices[0].text.split('\n').map((str) => `${str}`).join('<br/>'))
-            //console.log(data.choices[0].text.split('\n').map((str) => `<p>${str}</p>`).join(''))
-            //.split('\n').map((str) => `<p>${str}</p>`).join('')
+            //console.log(data)
         )
     }
 
